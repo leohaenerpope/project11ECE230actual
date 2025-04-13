@@ -11,8 +11,8 @@ module dff(
         Q <= Default;
     end
 
-    always @(posedge clk, negedge reset) begin
-        if (!reset)
+    always @(posedge clk) begin
+        if (reset)
             Q <= Default;
         else
             Q <= D;
