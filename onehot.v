@@ -16,7 +16,7 @@ module onehot(
     );
     
     dff Bdff(
-        .Default(1'b1),
+        .Default(1'b0),
         .D(Bnext),
         .clk(clk),
         .Q(Bstate),
@@ -24,7 +24,7 @@ module onehot(
     );
     
     dff Cdff(
-        .Default(1'b1),
+        .Default(1'b0),
         .D(Cnext),
         .clk(clk),
         .Q(Cstate),
@@ -32,7 +32,7 @@ module onehot(
     );
     
     dff Ddff(
-        .Default(1'b1),
+        .Default(1'b0),
         .D(Dnext),
         .clk(clk),
         .Q(Dstate),
@@ -40,7 +40,7 @@ module onehot(
     );
     
     dff Edff(
-        .Default(1'b1),
+        .Default(1'b0),
         .D(Enext),
         .clk(clk),
         .Q(Estate),
@@ -49,7 +49,7 @@ module onehot(
     
     assign z = Cstate | Estate;
     
-    assign Anext = 1;
+    assign Anext = 0;
     assign Bnext = ~w & (Astate | Dstate | Estate);
     assign Cnext = ~w & (Bstate | Cstate);
     assign Dnext = w & (Astate | Bstate | Cstate);
